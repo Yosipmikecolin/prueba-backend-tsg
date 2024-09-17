@@ -1,8 +1,10 @@
 import express from "express";
+import { testConnection } from "./database/data.js";
 const app = express();
 
 //Variables
 app.set("port", process.env.PORT || 5000);
+testConnection()
 
 
 //Servidor
