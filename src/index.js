@@ -1,4 +1,5 @@
 import express from "express";
+import cors from "cors";
 import routePlaces from "./routes/place.route.js";
 const app = express();
 
@@ -7,6 +8,7 @@ app.set("port", process.env.PORT || 5000);
 
 //MIDLEWARES
 app.use(express.json());
+app.use(cors());
 
 //ROUTES
 app.use("/api", routePlaces);
