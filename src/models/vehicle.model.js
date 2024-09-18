@@ -1,6 +1,7 @@
 import { DataTypes } from "sequelize";
 import { sequelize } from "../database/data.js";
-export const Vehicle = sequelize.define(
+
+const Vehicle = sequelize.define(
   "Vehicle",
   {
     id: {
@@ -20,14 +21,13 @@ export const Vehicle = sequelize.define(
     entry_time: {
       type: DataTypes.DATE,
       allowNull: false,
-      defaultValue: Sequelize.NOW,
     },
     exit_time: {
       type: DataTypes.DATE,
-      allowNull: true, // Se actualizará cuando el vehículo salga
+      allowNull: true,
     },
     discount: {
-      type: DataTypes.BOOLEAN,
+      type: DataTypes.STRING,
       defaultValue: false,
     },
   },
@@ -36,3 +36,5 @@ export const Vehicle = sequelize.define(
     timestamps: false,
   }
 );
+
+export default Vehicle;
