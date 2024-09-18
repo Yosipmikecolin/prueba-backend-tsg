@@ -1,5 +1,7 @@
 import { DataTypes } from "sequelize";
-export const Place = sequelize.define(
+import { sequelize } from "../database/data.js";
+
+const Place = sequelize.define(
   "Place",
   {
     id: {
@@ -8,8 +10,8 @@ export const Place = sequelize.define(
       primaryKey: true,
     },
     status: {
-      type: DataTypes.BOOLEAN,
-      defaultValue: false, // Plaza libre por defecto
+      type: DataTypes.STRING,
+      defaultValue: false,
     },
     place: {
       type: DataTypes.STRING,
@@ -17,7 +19,7 @@ export const Place = sequelize.define(
     },
     type: {
       type: DataTypes.STRING,
-      allowNull: false, // 'Motocicleta' o 'Vehículo Ligero'
+      allowNull: false,
     },
   },
   {
@@ -25,3 +27,5 @@ export const Place = sequelize.define(
     timestamps: false,
   }
 );
+
+export default Place;

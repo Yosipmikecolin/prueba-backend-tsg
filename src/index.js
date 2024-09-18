@@ -1,13 +1,17 @@
 import express from "express";
-import { testConnection } from "./database/data.js";
+import routePlaces from "./routes/place.route.js";
 const app = express();
 
-//Variables
+//VARIABLES
 app.set("port", process.env.PORT || 5000);
-testConnection()
 
+//MIDLEWARES
+app.use(express.json());
 
-//Servidor
+//ROUTES
+app.use("/api", routePlaces);
+
+//SERVIDOR
 app.listen(app.get("port"), () => {
   console.log("Server run port in", app.get("port"));
 });
