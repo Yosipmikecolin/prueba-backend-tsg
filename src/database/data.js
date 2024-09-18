@@ -19,3 +19,14 @@ export const testConnection = async () => {
     console.error("Error al conectar a la base de datos:", error);
   }
 };
+
+export const synchronizeData = async () => {
+  sequelize
+    .sync({ force: false })
+    .then(() => {
+      console.log("Database & tables created!");
+    })
+    .catch((err) => {
+      console.error("Unable to create tables:", err);
+    });
+};
