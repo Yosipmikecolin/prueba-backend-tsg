@@ -1,16 +1,6 @@
-import Vehicle from "./vehicle.model.js";
-import Place from "./place.model.js";
+import Vehicle from './vehicle.model.js';
+import Place from './place.model.js';
 
-// Definir la relación uno a uno
-Vehicle.belongsTo(Place, {
-  foreignKey: {
-    name: "placeId",
-    allowNull: false,
-  },
-  as: "place",
-});
-
-Place.hasOne(Vehicle, {
-  foreignKey: "placeId",
-  as: "vehicle",
-});
+// Definir las relaciones entre los modelos
+Vehicle.belongsTo(Place, { foreignKey: 'placeId', as: 'place' });
+Place.hasOne(Vehicle, { foreignKey: 'placeId', as: 'vehicle' });

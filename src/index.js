@@ -2,6 +2,7 @@ import express from "express";
 import cors from "cors";
 import routePlaces from "./routes/place.route.js";
 import routeVehicle from "./routes/vehicle.route.js";
+import "./models/associations.js";
 const app = express();
 
 //VARIABLES
@@ -12,8 +13,8 @@ app.use(express.json());
 app.use(cors());
 
 //ROUTES
-app.use("/api", routePlaces);
 app.use("/api", routeVehicle);
+app.use("/api", routePlaces);
 
 //SERVIDOR
 app.listen(app.get("port"), () => {

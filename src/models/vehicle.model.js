@@ -30,6 +30,10 @@ const Vehicle = sequelize.define(
       type: DataTypes.STRING,
       defaultValue: false,
     },
+    placeId: {
+      type: DataTypes.INTEGER,
+      allowNull: false,
+    },
   },
   {
     tableName: "vehicle",

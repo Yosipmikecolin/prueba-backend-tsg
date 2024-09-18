@@ -22,7 +22,7 @@ export const testConnection = async () => {
 
 export const synchronizeData = async () => {
   sequelize
-    .sync({ force: false })
+    .sync({ force: true })
     .then(() => {
       console.log("Database & tables created!");
     })
