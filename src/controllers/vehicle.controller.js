@@ -35,3 +35,13 @@ export const postVehicle = async (req, res) => {
     res.status(500).json({ message: `Error ${error}` });
   }
 };
+
+export const putVehicle = async (req, res) => {
+  try {
+    const { id, ...rest } = req.body;
+    await Vehicle.update(rest, { where: { id } });
+    res.status(201).json({ message: `Vehicle updated successfully` });
+  } catch (error) {
+    res.status(500).json({ message: `Error ${error}` });
+  }
+};

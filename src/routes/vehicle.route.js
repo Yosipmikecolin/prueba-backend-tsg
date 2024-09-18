@@ -1,8 +1,13 @@
 import { Router } from "express";
-import { getVehicles, postVehicle } from "../controllers/vehicle.controller.js";
+import {
+  getVehicles,
+  postVehicle,
+  putVehicle,
+} from "../controllers/vehicle.controller.js";
 const route = Router();
 
-route.post("/register-vehicle", postVehicle);
 route.get("/get-vehicles", getVehicles);
+route.post("/updated-vehicle", putVehicle);
+route.post("/register-vehicle", postVehicle);
 
 export default route;

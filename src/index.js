@@ -11,6 +11,7 @@ app.set("port", process.env.PORT || 5000);
 //MIDLEWARES
 app.use(express.json());
 app.use(cors());
+//synchronizeData()
 
 //ROUTES
 app.use("/api", routeVehicle);
