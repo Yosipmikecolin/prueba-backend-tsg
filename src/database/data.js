@@ -1,12 +1,11 @@
 import { Sequelize } from "sequelize";
-
 export const sequelize = new Sequelize(
   "railway",
   "root",
-  "mFWnxNzcJuFXAUMfQiNokpxZagCTKCvn",
+  "cATmdfLaruVZvHKZJeXKwBXTdLDoSnPF",
   {
-    host: "roundhouse.proxy.rlwy.net",
-    port: 43912,
+    host: "junction.proxy.rlwy.net",
+    port: 33270,
     dialect: "mysql",
   }
 );

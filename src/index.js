@@ -5,7 +5,6 @@ import routeVehicle from "./routes/vehicle.route.js";
 import routeIncome from "./routes/income.route.js";
 import "./models/associations.js";
 const app = express();
-
 //VARIABLES
 app.set("port", process.env.PORT || 5000);
 
